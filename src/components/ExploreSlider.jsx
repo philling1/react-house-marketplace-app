@@ -8,7 +8,6 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import Spinner from "./Spinner"
-import { async } from "@firebase/util"
 
 function ExploreSlider() {
   const [loading, setLoading] = useState(true)

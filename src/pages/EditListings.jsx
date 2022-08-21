@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react"
-import {getAuth, onAuthStateChanged, parseActionCodeURL} from 'firebase/auth'
+import {getAuth, onAuthStateChanged} from 'firebase/auth'
 import {
   getStorage,
   ref,
@@ -12,7 +12,6 @@ import {v4 as uuidv4} from 'uuid'
 import { useNavigate, useParams } from "react-router-dom"
 import Spinner from "../components/Spinner"
 import {toast} from 'react-toastify'
-import { async } from "@firebase/util"
 
 
 function EditListings() {

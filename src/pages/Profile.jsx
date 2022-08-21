@@ -15,7 +15,6 @@ import {toast} from 'react-toastify'
 import arrowRight from '../assets/svg/keyboardArrowRightIcon.svg'
 import ListingItem from '../components/ListingItem'
 import homeIcon from '../assets/svg/homeIcon.svg'
-import { async } from "@firebase/util"
 
 
 function Profile() {
