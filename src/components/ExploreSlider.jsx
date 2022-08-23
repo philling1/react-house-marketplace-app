@@ -50,7 +50,8 @@ function ExploreSlider() {
 
     <Swiper 
     modules={[Navigation, Pagination, Scrollbar, A11y]}
-    slidesPerView={1} 
+    slidesPerView={1}
+    navigation
     pagination={{clickable: true}}>
       {listings.map(({data, id}) => (
         <SwiperSlide key={id} onClick={() => navigate(`/category/${data.type}/${id}`)}>
