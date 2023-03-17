@@ -337,25 +337,6 @@ button {
   object-fit: cover;
 }
 
-
-/* .swiperSlideDiv {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  
-}
-
-img.swiperSlideImg{
-  pointer-events: none;
-  position: relative;
-  min-width: 100%;
-  min-height: 100%;
-  object-position: center;
-  object-fit: cover;
-  z-index: -1;
-} */
-
-
 .swiperSlideText {
   color: #ffffff;
   position: absolute;

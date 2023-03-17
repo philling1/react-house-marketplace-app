@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import SwiperCore, {Navigation, Pagination, Scrollbar, A11y} from 'swiper'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import {Swiper, SwiperSlide} from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import {getDoc, doc} from 'firebase/firestore'
 import { getAuth } from 'firebase/auth'
 import { db } from '../firebase.config'
@@ -48,25 +48,21 @@ function Listing() {
     <Swiper
     modules={[Navigation, Pagination, Scrollbar, A11y]} 
     slidesPerView={1}
+    pagination={{clickable: true}}
     navigation
-    pagination={{clickable: true}} >
-    {listing.imageUrls.map((url, index) => (
-      <SwiperSlide key={index}>
-        {/* <div 
-        style={{
-          backgroundImage: `url(${listing.imageUrls[index]})`, 
-          backgroundPosition: 'center', 
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'}} 
-          className="swiperSlideDiv"></div> */}
-          <div className="swiperSlideDiv">
-            <img src={`${listing.imageUrls[index]}`}
-            className='swiperSlideImg'
-            alt=''
-            />
-          </div>
-      </SwiperSlide>
-    ))}
+    style={{ height: '300px' }} >
+    {listing.imageUrls.map((url, index) => {
+      return (
+        <SwiperSlide key={index}>
+          <div
+          className='swiper-container'
+          style={{
+            background: `url(${listing.imageUrls[index]}) center no-repeat`,
+            backgroundSize: 'cover',
+          }}></div>
+        </SwiperSlide>
+      )
+    })}
     </Swiper>
 
     <div className="shareIconDiv" onClick={() => {

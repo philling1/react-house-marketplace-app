@@ -2,11 +2,11 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { collection, getDocs, query, orderBy, limit } from "firebase/firestore"
 import { db } from "../firebase.config"
-import SwiperCore, {Navigation, Pagination, Scrollbar, A11y} from 'swiper'
+import { Navigation, Pagination, Scrollbar, A11y}  from 'swiper'
+import {Swiper, SwiperSlide} from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import {Swiper, SwiperSlide} from 'swiper/react'
 import Spinner from "./Spinner"
 
 function ExploreSlider() {
@@ -54,11 +54,15 @@ function ExploreSlider() {
     navigation
     pagination={{clickable: true}}>
       {listings.map(({data, id}) => (
-        <SwiperSlide key={id} onClick={() => navigate(`/category/${data.type}/${id}`)}>
-          <div className="swiperSlideDiv">
-          <img src={`${data.imageUrls[0]}`}
-          className='swiperSlideImg' 
-          alt=""/>
+        <SwiperSlide 
+        key={id} 
+        onClick={() => navigate(`/category/${data.type}/${id}`)}>
+          <div 
+          className="swiper-container"
+          style={{
+            background: `url(${data.imageUrls[0]}) center no-repeat`,
+            backgroundSize: 'cover',
+          }}>
           <p className="swiperSlideText">${data.name}</p>
           <p className="swiperSlidePrice">
             ${data.discountedPrice ?? data.regularPrice}{' '}
